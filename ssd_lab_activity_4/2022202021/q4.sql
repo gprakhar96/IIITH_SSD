@@ -16,16 +16,15 @@ BEGIN
 
     SET numRows = 25;
 
-    custLoop: 
-    LOOP
+    custLoop: LOOP
         IF numRows > 0 THEN
             FETCH ptr INTO cust_name, cust_city, cust_country, cust_grade;
             SET ans = CONCAT(ans, cust_name, cust_city, cust_country, cust_grade);
             SET numRows = numRows - 1;
-            Select ans;
-            SET ans = "";
-        ENF IF;
-        GOTO custLoop;
+            Select cust_name, cust_city, cust_country, cust_grade as x;
+            Select x
+        END IF;
+        ITERATE custLoop;
     END LOOP;
 END;//
 
