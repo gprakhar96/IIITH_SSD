@@ -23,15 +23,16 @@
                 </div>
                 <div class="team-form">
                     <label for="usr-name">Server Username</label>
-                    <input type="text" name="usr-name" id="usr-name" required>
+                    <input type="text" name="usr-name" id="usr-name" 
+                    onkeyup="checkUserName()" required><span id="error-span"></span>
                 </div>
                 <div class="team-form">
                     <label for="server-pass">Server Password</label>
-                    <input type="password" name="server-pass" id="server-pass" required>
+                    <input type="password" name="server-pass" id="server-pass" onfocusout="storePass()" required>
                 </div>
                 <div class="team-form">
                     <label for="conf-pass">Confirm Password</label>
-                    <input type="password" name="conf-pass" id="conf-pass" required>
+                    <input type="password" name="conf-pass" id="conf-pass" onfocusout="confirmPass()" required>
                 </div>
                 <div class="team-form">
                     <label for="o-team-lead">Manager Name</label>
@@ -66,7 +67,7 @@
                     
                     
                 </div>
-                <button type="submit" form="form1" value="Submit" class="team-form">Submit</button>
+                <button type="submit" form="form1" value="Submit" class="team-form" onclick="check()">Submit</button>
             </form>
         </div>
     </div>
